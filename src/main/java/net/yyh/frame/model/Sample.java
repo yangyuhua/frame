@@ -1,9 +1,12 @@
 package net.yyh.frame.model;
 
+import javax.persistence.Entity;
+
 /**
  *
  */
-public class Sample {
+@Entity
+public class Sample extends BaseAuditEntity{
 
 	private static final long serialVersionUID = -4075606447345640202L;
 
