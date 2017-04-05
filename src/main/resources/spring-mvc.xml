@@ -9,7 +9,7 @@
 
     <context:component-scan base-package="net.yyh.frame.controller"/>
 
-    <mvc:annotation-driven>
+    <mvc:annotation-driven conversion-service="conversionService">
         <!-- json converter -->
         <mvc:message-converters>
             <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
@@ -32,10 +32,19 @@
    <bean id="customObjectMapper" class="com.fasterxml.jackson.databind.ObjectMapper">
        <property name="dateFormat">
            <bean class="java.text.SimpleDateFormat">
-               <constructor-arg type="java.lang.String" value="yyyy-MM-dd"/>
+               <constructor-arg type="java.lang.String"  value="yyyy-MM-dd"/>
            </bean>
        </property>
    </bean>
+
+    <!-- customObjectMapper -->
+    <bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+        <property name="converters">
+            <set>
+                <bean class="net.yyh.frame.converter.SampleConverter"></bean>
+            </set>
+        </property>
+    </bean>
 
     <mvc:resources mapping="/resources/**" location="/resources/"/>
 
