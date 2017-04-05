@@ -1,6 +1,6 @@
 package net.yyh.frame.converter;
 
-import model.Sample;
+import net.yyh.frame.model.Sample;
 import org.springframework.core.convert.converter.Converter;
 
 /**
