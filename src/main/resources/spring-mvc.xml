@@ -37,7 +37,7 @@
        </property>
    </bean>
 
-    <!-- customObjectMapper -->
+    <!-- conversionService -->
     <bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
         <property name="converters">
             <set>
